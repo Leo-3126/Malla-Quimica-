@@ -1,107 +1,121 @@
-const ramos = [
-  // Ciclo I
-  { id: 'mat1', nombre: 'Matemáticas I', requisitos: [] },
-  { id: 'fis1', nombre: 'Física I', requisitos: [] },
-  { id: 'quim1', nombre: 'Química General I', requisitos: [] },
-  { id: 'ing1', nombre: 'Inglés Técnico I', requisitos: [] },
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva - Farmacia</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Malla Curricular Interactiva - Farmacia</h1>
 
-  // Ciclo II
-  { id: 'mat2', nombre: 'Matemáticas II', requisitos: ['mat1'] },
-  { id: 'fis2', nombre: 'Física II', requisitos: ['fis1'] },
-  { id: 'quim2', nombre: 'Química General II', requisitos: ['quim1'] },
-  { id: 'ing2', nombre: 'Inglés Técnico II', requisitos: ['ing1'] },
-  { id: 'redac', nombre: 'Técnicas de Redacción', requisitos: [] },
+  <div class="ciclo" id="ciclo1">
+    <h2>Ciclo I</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="mat1">Matemáticas I</div>
+      <div class="ramo" id="fis1">Física I</div>
+      <div class="ramo" id="quim1">Química General I</div>
+      <div class="ramo" id="ing1">Inglés Técnico I</div>
+    </div>
+  </div>
 
-  // Ciclo III
-  { id: 'mat3', nombre: 'Matemáticas III', requisitos: ['mat2'] },
-  { id: 'qacual', nombre: 'Química Analítica Cualitativa', requisitos: ['quim2'] },
-  { id: 'org1', nombre: 'Química Orgánica I', requisitos: ['quim2'] },
-  { id: 'inorg', nombre: 'Química Inorgánica', requisitos: ['quim2'] },
+  <div class="ciclo" id="ciclo2">
+    <h2>Ciclo II</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="mat2">Matemáticas II</div>
+      <div class="ramo" id="fis2">Física II</div>
+      <div class="ramo" id="quim2">Química General II</div>
+      <div class="ramo" id="ing2">Inglés Técnico II</div>
+      <div class="ramo" id="redac">Técnicas de Redacción</div>
+    </div>
+  </div>
 
-  // Ciclo IV
-  { id: 'org2', nombre: 'Química Orgánica II', requisitos: ['org1'] },
-  { id: 'qacuant', nombre: 'Química Analítica Cuantitativa', requisitos: ['qacual'] },
-  { id: 'estad', nombre: 'Estadística', requisitos: ['mat2'] },
-  { id: 'biog', nombre: 'Biología General', requisitos: ['quim2'] },
-  { id: 'socio', nombre: 'Sociología', requisitos: [] },
+  <div class="ciclo" id="ciclo3">
+    <h2>Ciclo III</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="mat3">Matemáticas III</div>
+      <div class="ramo" id="qacual">Química Analítica Cualitativa</div>
+      <div class="ramo" id="org1">Química Orgánica I</div>
+      <div class="ramo" id="inorg">Química Inorgánica</div>
+    </div>
+  </div>
 
-  // Ciclo V
-  { id: 'aorg', nombre: 'Análisis Orgánico Estructural', requisitos: ['org2'] },
-  { id: 'fisico1', nombre: 'Fisicofarmacia I', requisitos: ['qacuant', 'fis2', 'mat3', 'estad'] },
-  { id: 'bioq', nombre: 'Bioquímica General', requisitos: ['org2', 'qacuant'] },
-  { id: 'zool', nombre: 'Zoología Aplicada a la Farmacia', requisitos: ['org2', 'biog'] },
-  { id: 'psico', nombre: 'Psicología Aplicada a la Empresa', requisitos: [] },
+  <div class="ciclo" id="ciclo4">
+    <h2>Ciclo IV</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="org2">Química Orgánica II</div>
+      <div class="ramo" id="qacuant">Química Analítica Cuantitativa</div>
+      <div class="ramo" id="estad">Estadística</div>
+      <div class="ramo" id="biog">Biología General</div>
+      <div class="ramo" id="socio">Sociología</div>
+    </div>
+  </div>
 
-  // Ciclo VI
-  { id: 'anato', nombre: 'Anatomía', requisitos: ['bioq', 'biog'] },
-  { id: 'fisico2', nombre: 'Fisicofarmacia II', requisitos: ['fisico1'] },
-  { id: 'micro', nombre: 'Microbiología y Parasitología', requisitos: ['zool', 'bioq'] },
-  { id: 'botan', nombre: 'Botánica General y Farmacéutica', requisitos: ['biog', 'bioq'] },
-  { id: 'admin', nombre: 'Principios de Administración', requisitos: [] },
+  <div class="ciclo" id="ciclo5">
+    <h2>Ciclo V</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="aorg">Análisis Orgánico Estructural</div>
+      <div class="ramo" id="fisico1">Fisicofarmacia I</div>
+      <div class="ramo" id="bioq">Bioquímica General</div>
+      <div class="ramo" id="zool">Zoología Aplicada a la Farmacia</div>
+      <div class="ramo" id="psico">Psicología Aplicada a la Empresa</div>
+    </div>
+  </div>
 
-  // Ciclo VII
-  { id: 'fisio', nombre: 'Fisiología', requisitos: ['anato'] },
-  { id: 'instr', nombre: 'Análisis Instrumental', requisitos: ['qacuant', 'aorg', 'fisico2'] },
-  { id: 'farmacoq', nombre: 'Farmacoquímica', requisitos: ['inorg', 'qacuant', 'aorg'] },
-  { id: 'farcog', nombre: 'Farmacognosia', requisitos: ['aorg', 'bioq', 'botan'] },
-  { id: 'opt1', nombre: 'Optativa I', requisitos: ['fisico2'] },
+  <div class="ciclo" id="ciclo6">
+    <h2>Ciclo VI</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="anato">Anatomía</div>
+      <div class="ramo" id="fisico2">Fisicofarmacia II</div>
+      <div class="ramo" id="micro">Microbiología y Parasitología</div>
+      <div class="ramo" id="botan">Botánica General y Farmacéutica</div>
+      <div class="ramo" id="admin">Principios de Administración</div>
+    </div>
+  </div>
 
-  // Ciclo VIII
-  { id: 'farmaco', nombre: 'Farmacología', requisitos: ['fisio'] },
-  { id: 'broma', nombre: 'Análisis Bromatológico', requisitos: ['micro', 'instr'] },
-  { id: 'farmaTec', nombre: 'Farmacotecnia', requisitos: ['farmacoq', 'farcog'] },
-  { id: 'opt2', nombre: 'Optativa II', requisitos: ['opt1'] },
+  <div class="ciclo" id="ciclo7">
+    <h2>Ciclo VII</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="fisio">Fisiología</div>
+      <div class="ramo" id="instr">Análisis Instrumental</div>
+      <div class="ramo" id="farmacoq">Farmacoquímica</div>
+      <div class="ramo" id="farcog">Farmacognosia</div>
+      <div class="ramo" id="opt1">Optativa I</div>
+    </div>
+  </div>
 
-  // Ciclo IX
-  { id: 'toxico', nombre: 'Química Forense y Toxicología', requisitos: ['instr', 'farmaco'] },
-  { id: 'ccpf', nombre: 'Control Calidad Prod. Farmacéuticos', requisitos: ['ing2', 'estad', 'instr', 'farmaco', 'farmaTec'] },
-  { id: 'tecfarm', nombre: 'Tecnología Farmacéutica', requisitos: ['fisico2', 'farmaco', 'farmaTec'] },
-  { id: 'ambiente', nombre: 'Contaminación Ambiental y Salud Pública', requisitos: ['farmaco', 'broma'] },
-  { id: 'opt3', nombre: 'Optativa III', requisitos: ['opt2'] },
+  <div class="ciclo" id="ciclo8">
+    <h2>Ciclo VIII</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="farmaco">Farmacología</div>
+      <div class="ramo" id="broma">Análisis Bromatológico</div>
+      <div class="ramo" id="farmaTec">Farmacotecnia</div>
+      <div class="ramo" id="opt2">Optativa II</div>
+    </div>
+  </div>
 
-  // Ciclo X
-  { id: 'legis', nombre: 'Legislación Farmacéutica y Deontología', requisitos: ['ccpf', 'tecfarm'] },
-  { id: 'cccosme', nombre: 'Control Calidad Farmacéutica y Cosmética', requisitos: ['ccpf'] },
-  { id: 'teccosme', nombre: 'Tecnología Farmacéutica y Cosmética', requisitos: ['ccpf', 'tecfarm'] },
-  { id: 'quimind', nombre: 'Química Industrial y Recursos Renovables', requisitos: ['farcog', 'ambiente'] },
-  { id: 'opt4', nombre: 'Optativa IV', requisitos: ['opt3'] },
-];
+  <div class="ciclo" id="ciclo9">
+    <h2>Ciclo IX</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="toxico">Química Forense y Toxicología</div>
+      <div class="ramo" id="ccpf">Control Calidad Prod. Farmacéuticos</div>
+      <div class="ramo" id="tecfarm">Tecnología Farmacéutica</div>
+      <div class="ramo" id="ambiente">Contaminación Ambiental y Salud Pública</div>
+      <div class="ramo" id="opt3">Optativa III</div>
+    </div>
+  </div>
 
-function renderMalla() {
-  const contenedor = document.getElementById('malla');
-  ramos.forEach(ramo => {
-    const div = document.getElementById(ramo.id);
-    div.textContent = ramo.nombre;
-  });
-  desbloquearIniciales();
-}
+  <div class="ciclo" id="ciclo10">
+    <h2>Ciclo X</h2>
+    <div class="ciclo-grid">
+      <div class="ramo" id="legis">Legislación Farmacéutica y Deontología</div>
+      <div class="ramo" id="cccosme">Control Calidad Farmacéutica y Cosmética</div>
+      <div class="ramo" id="teccosme">Tecnología Farmacéutica y Cosmética</div>
+      <div class="ramo" id="quimind">Química Industrial y Recursos Renovables</div>
+      <div class="ramo" id="opt4">Optativa IV</div>
+    </div>
+  </div>
 
-function desbloquearIniciales() {
-  ramos.forEach(ramo => {
-    if (ramo.requisitos.length === 0) {
-      document.getElementById(ramo.id).classList.add('desbloqueado');
-    }
-  });
-}
+  <script src="script.js"></script>
+</body>
+</html>
 
-document.addEventListener('click', e => {
-  if (e.target.classList.contains('desbloqueado') && !e.target.classList.contains('aprobado')) {
-    e.target.classList.add('aprobado');
-    desbloquearDependientes(e.target.id);
-  }
-});
-
-function desbloquearDependientes(idAprobado) {
-  ramos.forEach(ramo => {
-    if (!document.getElementById(ramo.id).classList.contains('aprobado')) {
-      const requisitosCumplidos = ramo.requisitos.every(req => {
-        return document.getElementById(req).classList.contains('aprobado');
-      });
-      if (requisitosCumplidos) {
-        document.getElementById(ramo.id).classList.add('desbloqueado');
-      }
-    }
-  });
-}
-
-renderMalla();
