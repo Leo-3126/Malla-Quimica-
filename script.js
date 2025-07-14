@@ -70,11 +70,8 @@ const ramos = [
 function renderMalla() {
   const contenedor = document.getElementById('malla');
   ramos.forEach(ramo => {
-    const div = document.createElement('div');
-    div.className = 'ramo';
-    div.id = ramo.id;
+    const div = document.getElementById(ramo.id);
     div.textContent = ramo.nombre;
-    contenedor.appendChild(div);
   });
   desbloquearIniciales();
 }
