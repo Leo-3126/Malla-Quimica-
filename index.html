@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular - Farmacia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .semestre {
+      margin-bottom: 40px;
+    }
+    .ciclo-titulo {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .ramos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .ramo {
+      background-color: #e1f5fe;
+      border: 2px solid #0288d1;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+      cursor: pointer;
+      position: relative;
+    }
+    .ramo:hover {
+      background-color: #b3e5fc;
+    }
+    .info {
+      display: none;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Malla Curricular Interactiva – Farmacia</h1>
+
+  <!-- Ciclo I -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo I</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('quimica1')">QUQ116 - Química General I</div>
+      <div id="quimica1" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: Bachillerato
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('fisica1')">FIS116 - Física I</div>
+      <div id="fisica1" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: Bachillerato
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('mate1')">MAT116 - Matemática I</div>
+      <div id="mate1" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: Bachillerato
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('ingles1')">ING116 - Inglés Técnico</div>
+      <div id="ingles1" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: Bachillerato
+      </div>
+    </div>
+  </div>
+
+  <!-- Ciclo II -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo II</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('quimica2')">QUQ216 - Química General II</div>
+      <div id="quimica2" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: QUQ116
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('fisica2')">FIS216 - Física II</div>
+      <div id="fisica2" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: FIS116
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('mate2')">MAT216 - Matemática II</div>
+      <div id="mate2" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: MAT116
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('ingles2')">ING216 - Inglés Técnico II</div>
+      <div id="ingles2" class="info">
+        Créditos: 4<br>
+        Prerrequisitos: ING116
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('trii')">TRI116 - Técnicas de Redacción e Investigación</div>
+      <div id="trii" class="info">
+        Créditos: 3<br>
+        Prerrequisitos: Bachillerato
+      </div>
+    </div>
+  </div>
+  <!-- Ciclo III -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo III</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('mat3')">Matemáticas III</div>
+      <div id="mat3" class="info">Prerrequisito: Matemáticas II</div>
+
+      <div class="ramo" onclick="toggleInfo('qac')">Química Analítica Cualitativa</div>
+      <div id="qac" class="info">Prerrequisito: Química General II</div>
+
+      <div class="ramo" onclick="toggleInfo('org1')">Química Orgánica I</div>
+      <div id="org1" class="info">Prerrequisito: Química General II</div>
+
+      <div class="ramo" onclick="toggleInfo('inorg')">Química Inorgánica</div>
+      <div id="inorg" class="info">Prerrequisito: Química General II</div>
+    </div>
+  </div>
+  <!-- Ciclo IV -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo IV</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('org2')">Química Orgánica II</div>
+      <div id="org2" class="info">Prerrequisito: Química Orgánica I</div>
+
+      <div class="ramo" onclick="toggleInfo('qacuant')">Química Analítica Cuantitativa</div>
+      <div id="qacuant" class="info">Prerrequisito: Química Analítica Cualitativa</div>
+
+      <div class="ramo" onclick="toggleInfo('estad')">Estadística</div>
+      <div id="estad" class="info">Prerrequisito: Matemáticas II</div>
+
+      <div class="ramo" onclick="toggleInfo('biog')">Biología General</div>
+      <div id="biog" class="info">Prerrequisito: Química General II</div>
+
+      <div class="ramo" onclick="toggleInfo('socio')">Sociología</div>
+      <div id="socio" class="info">Prerrequisito: Bachiller</div>
+    </div>
+  </div>
+  <!-- Ciclo V -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo V</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('analOrg')">Análisis Orgánico Estructural</div>
+      <div id="analOrg" class="info">Prerrequisito: Química Orgánica II</div>
+
+      <div class="ramo" onclick="toggleInfo('fisico1')">Fisicofarmacia I</div>
+      <div id="fisico1" class="info">
+        Prerrequisitos: Química Analítica Cuantitativa, Física II, Matemáticas III, Estadística
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('bioq')">Bioquímica General</div>
+      <div id="bioq" class="info">
+        Prerrequisitos: Química Orgánica II, Química Analítica Cuantitativa
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('zool')">Zoología Aplicada a la Farmacia</div>
+      <div id="zool" class="info">
+        Prerrequisitos: Química Orgánica II, Biología General
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('psico')">Psicología Aplicada a la Empresa</div>
+      <div id="psico" class="info">Prerrequisito: Bachiller</div>
+    </div>
+  </div>
+  <!-- Ciclo VI -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo VI</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('anato')">Anatomía</div>
+      <div id="anato" class="info">
+        Prerrequisitos: Bioquímica General, Biología General
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('fisico2')">Fisicofarmacia II</div>
+      <div id="fisico2" class="info">Prerrequisito: Fisicofarmacia I</div>
+
+      <div class="ramo" onclick="toggleInfo('micro')">Microbiología y Parasitología</div>
+      <div id="micro" class="info">
+        Prerrequisitos: Zoología Aplicada a la Farmacia, Bioquímica General
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('botanica')">Botánica General y Farmacéutica</div>
+      <div id="botanica" class="info">
+        Prerrequisitos: Biología General, Bioquímica General
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('admin')">Principios de Administración</div>
+      <div id="admin" class="info">Prerrequisito: Bachiller</div>
+  <!-- Ciclo VII -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo VII</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('fisio')">Fisiología</div>
+      <div id="fisio" class="info">Prerrequisito: Anatomía</div>
+
+      <div class="ramo" onclick="toggleInfo('analInstr')">Análisis Instrumental</div>
+      <div id="analInstr" class="info">
+        Prerrequisitos: Química Analítica Cuantitativa, Análisis Orgánico Estructural, Fisicofarmacia II
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('farmacoq')">Farmacoquímica</div>
+      <div id="farmacoq" class="info">
+        Prerrequisitos: Química Inorgánica, Química Analítica Cuantitativa, Análisis Orgánico Estructural
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('farmacognosia')">Farmacognosia</div>
+      <div id="farmacognosia" class="info">
+        Prerrequisitos: Análisis Orgánico Estructural, Bioquímica General, Botánica General y Farmacéutica
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('opt1')">Optativa I (Farmacia Industrial I)</div>
+      <div id="opt1" class="info">Prerrequisito: Fisicofarmacia II</div>
+    </div>
+  </div>
+  <!-- Ciclo VIII -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo VIII</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('farmacologia')">Farmacología</div>
+      <div id="farmacologia" class="info">Prerrequisito: Fisiología</div>
+
+      <div class="ramo" onclick="toggleInfo('bromato')">Análisis Bromatológico</div>
+      <div id="bromato" class="info">
+        Prerrequisitos: Microbiología y Parasitología, Análisis Instrumental
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('farmacotecnia')">Farmacotecnia</div>
+      <div id="farmacotecnia" class="info">
+        Prerrequisitos: Farmacoquímica, Farmacognosia
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('opt2')">Optativa II (Farmacia Industrial II)</div>
+      <div id="opt2" class="info">Prerrequisito: Farmacia Industrial I</div>
+    </div>
+  </div>
+  <!-- Ciclo IX -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo IX</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('toxicol')">Química Forense y Toxicología</div>
+      <div id="toxicol" class="info">
+        Prerrequisitos: Análisis Instrumental, Farmacología
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('controlCalidad')">Control de Calidad de Productos Farmacéuticos</div>
+      <div id="controlCalidad" class="info">
+        Prerrequisitos: Inglés Técnico II, Estadística, Análisis Instrumental, Farmacología, Farmacotecnia
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('tecnoFarm')">Tecnología Farmacéutica</div>
+      <div id="tecnoFarm" class="info">
+        Prerrequisitos: Fisicofarmacia II, Farmacología, Farmacotecnia
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('contam')">Contaminación Ambiental y Salud Pública</div>
+      <div id="contam" class="info">
+        Prerrequisitos: Farmacología, Análisis Bromatológico
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('opt3')">Optativa III (Farmacia Industrial III)</div>
+      <div id="opt3" class="info">Prerrequisito: Farmacia Industrial II</div>
+    </div>
+  </div>
+  <!-- Ciclo X -->
+  <div class="semestre">
+    <div class="ciclo-titulo">Ciclo X</div>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleInfo('legis')">Legislación Farmacéutica y Deontología</div>
+      <div id="legis" class="info">
+        Prerrequisitos: Control de Calidad de Productos Farmacéuticos, Tecnología Farmacéutica
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('controlCosme')">Control de Calidad de Productos Farmacéuticos y Cosméticos</div>
+      <div id="controlCosme" class="info">
+        Prerrequisito: Control de Calidad de Productos Farmacéuticos
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('tecnoCosme')">Tecnología Farmacéutica y Cosmética</div>
+      <div id="tecnoCosme" class="info">
+        Prerrequisitos: Control de Calidad de Productos Farmacéuticos, Tecnología Farmacéutica
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('quimIndus')">Química Industrial y Aprovechamiento de Recursos Naturales y Renovables</div>
+      <div id="quimIndus" class="info">
+        Prerrequisitos: Farmacognosia, Contaminación Ambiental y Salud Pública
+      </div>
+
+      <div class="ramo" onclick="toggleInfo('opt4')">Optativa IV (Farmacia Industrial IV)</div>
+      <div id="opt4" class="info">Prerrequisito: Farmacia Industrial III</div>
+    </div>
+  </div>
+
+  <!-- Script para alternar info -->
+  <script>
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      if (info.style.display === 'block') {
+        info.style.display = 'none';
+      } else {
+        // Ocultar otros
+        document.querySelectorAll('.info').forEach(el => el.style.display = 'none');
+        info.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
