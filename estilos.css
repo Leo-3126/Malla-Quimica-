@@ -11,11 +11,47 @@ h1 {
   margin-bottom: 40px;
 }
 
-#malla {
+#progreso-container {
+  margin-bottom: 30px;
+}
+
+#progreso-barra {
+  width: 80%;
+  height: 20px;
+  background-color: #f8bbd0;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #ec407a;
+}
+
+#progreso-barra-inner {
+  height: 100%;
+  background-color: #f06292;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#progreso-texto {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #c2185b;
+}
+
+.ciclo {
+  margin-bottom: 40px;
+}
+
+.ciclo h2 {
+  color: #c2185b;
+  margin-bottom: 10px;
+}
+
+.ciclo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
 }
 
 .ramo {
@@ -23,11 +59,12 @@ h1 {
   border: 2px solid #ec407a;
   border-radius: 10px;
   padding: 15px;
-  width: 200px;
-  transition: transform 0.2s;
+  min-width: 180px;
   cursor: pointer;
   opacity: 0.6;
   pointer-events: none;
+  text-decoration: none;
+  transition: transform 0.2s;
 }
 
 .ramo:hover {
@@ -40,25 +77,12 @@ h1 {
   opacity: 1;
   pointer-events: auto;
   border: 2px solid #c2185b;
+  text-decoration: line-through;
 }
 
 .ramo.desbloqueado {
   opacity: 1;
   pointer-events: auto;
 }
-.ciclo {
-  margin-bottom: 40px;
-}
 
-.ciclo h2 {
-  color: #c2185b;
-  margin-bottom: 10px;
-}
-
-.ciclo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
 
