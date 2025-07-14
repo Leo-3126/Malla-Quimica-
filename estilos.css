@@ -1,14 +1,16 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff0f5;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffeef6;
   color: #333;
   padding: 20px;
+  margin: 0;
   text-align: center;
 }
 
 h1 {
   color: #d81b60;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  font-size: 2em;
 }
 
 #progreso-container {
@@ -20,7 +22,7 @@ h1 {
   height: 20px;
   background-color: #f8bbd0;
   margin: 10px auto;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 5px #ec407a;
 }
@@ -38,45 +40,46 @@ h1 {
   color: #c2185b;
 }
 
+/* Contenedor de ciclo */
 .ciclo {
-  background-color: #ffe3ec;
-  border: 2px solid #ec407a;
-  border-radius: 15px;
-  padding: 15px;
+  background-color: #fce4ec;
+  border: 2px solid #f8bbd0;
+  border-radius: 20px;
+  padding: 20px;
   margin: 30px auto;
   width: 90%;
-  max-width: 900px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .ciclo h2 {
   color: #c2185b;
+  font-size: 1.5em;
   margin-bottom: 15px;
-  font-size: 1.4em;
 }
 
+/* Grid de ramos */
 .ciclo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
   justify-content: center;
 }
 
+/* Tarjeta de ramo */
 .ramo {
   background-color: #f8bbd0;
   border: 2px solid #ec407a;
-  border-radius: 10px;
-  padding: 15px;
-  min-width: 180px;
+  border-radius: 12px;
+  padding: 12px;
   cursor: pointer;
   opacity: 0.6;
   pointer-events: none;
-  text-decoration: none;
-  transition: transform 0.2s, background-color 0.3s;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .ramo:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .ramo.aprobado {
@@ -92,5 +95,6 @@ h1 {
   opacity: 1;
   pointer-events: auto;
 }
+
 
 
